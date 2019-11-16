@@ -1,10 +1,3 @@
-// -------------------------------------------------------
-// KStream.h
-// ´´½¨Õß£º »ÆÌÎ
-// ´´½¨Ê±¼ä£º 2018/11/26
-// ¹¦ÄÜÃèÊö£º »ùÓÚIStream ÊµÏÖÒ»¸öÎÄ¼ş¶ÁÈ¡¸¨ÖúÀàKReadArchive
-// Copyright 2013 Kingsoft
-// --------------------------------------------------------
 #pragma once
 #ifndef  _STREAM_KREADARCHIVE_H__
 #define _STREAM_KREADARCHIVE_H__
@@ -40,23 +33,23 @@ public:
 	virtual STDMETHODIMP Clone(IStream  **ppstm) override;
 
 	bool				unget();
-	void				skipws();					//Ìø¹ı¿Õ°××Ö·û
+	void				skipws();					//è·³è¿‡ç©ºç™½å­—ç¬¦
 	void				seek_end();
 	void				clear_cache();
 	void				seek(pos_type dwOffset);
-	unsigned		get_digit();		//»ñµÃÊı×Ö×Ö·û£¬Ö±µ½Óöµ½Ò»¸ö·Çdigit×Ö·ûÎªÖ¹
+	unsigned		get_digit();		//è·å¾—æ•°å­—å­—ç¬¦ï¼Œç›´åˆ°é‡åˆ°ä¸€ä¸ªédigitå­—ç¬¦ä¸ºæ­¢
 	char_type		get();
 	char_type		peek();
-	char_type		getnws();			//È¡µÃÏÂÒ»¸ö·Ç¿Õ°××Ö·û
-	pos_type		tell() const;		// ×¢Òâ»º´æ³¤¶È
+	char_type		getnws();			//å–å¾—ä¸‹ä¸€ä¸ªéç©ºç™½å­—ç¬¦
+	pos_type		tell() const;		// æ³¨æ„ç¼“å­˜é•¿åº¦
 	pos_type		size() const;
 	size_type		skip(size_type nMax);
 	size_type		get(char_type* lpBuf, size_type nMax);
-	//ÒªÇó£º ÊµÏÖÉÏ²ÉÓÃ»º´æÌá¸ß¶ÁÈ¡Ğ§ÂÊ£¬clear_cache ·½·¨ÎªÇå¿Õ»º´æ¡£
+	//è¦æ±‚ï¼š å®ç°ä¸Šé‡‡ç”¨ç¼“å­˜æé«˜è¯»å–æ•ˆç‡ï¼Œclear_cache æ–¹æ³•ä¸ºæ¸…ç©ºç¼“å­˜ã€‚
 protected:
 	size_type m_reference;
 private:
-	char_type* m_cache;			//Ö»¶Á»º´æ
+	char_type* m_cache;			//åªè¯»ç¼“å­˜
 	pos_type    m_currSeek;
 	pos_type    m_size;
 };
