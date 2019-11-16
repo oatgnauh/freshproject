@@ -1,10 +1,4 @@
-// -------------------------------------------------------
-// String.h
-// ´´½¨Õß£º »ÆÌÎ
-// ´´½¨Ê±¼ä£º 2018/11/20
-// ¹¦ÄÜÃèÊö£º ×Ö·û´®¹ÜÀí
-// Copyright 2013 Kingsoft
-// --------------------------------------------------------
+
 #pragma once
 #ifndef  _KSTRING_STRING_H__
 #define _KSTRING_STRING_H__
@@ -93,7 +87,7 @@ String<charT>::String(const charT* str)
 	}
 	m_currenSize = StrLen(str);
 	m_size = 2 * m_currenSize;
-	m_data = new charT[m_size + 1];			//Ìá¹©Á½±¶ÈßÓàÄÚ´æ¿Õ¼ä
+	m_data = new charT[m_size + 1];			//æä¾›ä¸¤å€å†—ä½™å†…å­˜ç©ºé—´
 	for (int i = 0; i < m_currenSize; i++)
 	{
 		m_data[i] = str[i];
@@ -201,7 +195,7 @@ String<charT>::~String()
 template<typename charT>
 String<charT>& String<charT>::operator=(const String<charT>& rhs)
 {
-	if (*this != rhs)		//±ÜÃâ×Ô¸³Öµ
+	if (*this != rhs)		//é¿å…è‡ªèµ‹å€¼
 	{
 		m_currenSize = rhs.m_currenSize;
 		m_size = rhs.m_size;
@@ -422,7 +416,7 @@ void String<charT>::resize(sizeType newSize)
 		newData[i] = m_data[i];
 	}
 	newData[m_currenSize] = '\0';
-	delete [] m_data;		//»ØÊÕ¾ÉÄÚ´æ
+	delete [] m_data;		//å›æ”¶æ—§å†…å­˜
 	m_data = newData;
 	m_size = newSize;
 }
