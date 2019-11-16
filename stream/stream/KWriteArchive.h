@@ -1,10 +1,3 @@
-// -------------------------------------------------------
-// KStream.h
-// ´´½¨Õß£º »ÆÌÎ
-// ´´½¨Ê±¼ä£º 2018/11/26
-// ¹¦ÄÜÃèÊö£º »ùÓÚIStream ÊµÏÖÒ»¸öÎÄ¼ş¶ÁÈ¡¸¨ÖúÀàKReadArchive
-// Copyright 2013 Kingsoft
-// --------------------------------------------------------
 #pragma once
 #ifndef  _STREAM_WRITEARCHIVE_H__
 #define _STREAM_WRITEARCHIVE_H__
@@ -38,7 +31,7 @@ public:
 	virtual STDMETHODIMP Clone(IStream  **ppstm) override;
 
 	void flush();						
-	pos_type tell() const;		// È¡µÃµ±Ç°ÎÄ¼şĞ´Ö¸ÕëµÄÆ«ÒÆÁ¿, °üÀ¨»º´æĞ´³¤¶È
+	pos_type tell() const;		// å–å¾—å½“å‰æ–‡ä»¶å†™æŒ‡é’ˆçš„åç§»é‡, åŒ…æ‹¬ç¼“å­˜å†™é•¿åº¦
 	void seek(pos_type dwOffset);
 	void seek_end();
 	void reput(size_type offset, const char_type* lpBuf, size_type cch);
